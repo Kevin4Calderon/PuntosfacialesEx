@@ -8,7 +8,7 @@ import numpy as np
 import random
 import copy
 
-app = Flask(_name_)
+app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 
 # Inicializar MediaPipe Face Mesh
@@ -128,5 +128,5 @@ def index():
 
     return render_template('index.html')
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)), debug=True)
